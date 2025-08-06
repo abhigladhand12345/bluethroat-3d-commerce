@@ -1,13 +1,21 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { motion } from 'framer-motion';
+import Hero from '@/components/sections/Hero';
+import FeaturedProducts from '@/components/sections/FeaturedProducts';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Navbar />
+      <Hero />
+      <FeaturedProducts />
+      <Footer />
+    </motion.div>
   );
 };
 
