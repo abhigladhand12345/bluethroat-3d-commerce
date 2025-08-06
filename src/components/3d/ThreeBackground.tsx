@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -15,16 +15,16 @@ function AnimatedSphere() {
   });
 
   return (
-    <Sphere ref={meshRef} args={[1, 64, 64]} scale={2}>
-      <MeshDistortMaterial
+    <mesh ref={meshRef} scale={2}>
+      <sphereGeometry args={[1, 32, 32]} />
+      <meshStandardMaterial
         color="#00BFFF"
-        attach="material"
-        distort={0.3}
-        speed={1.5}
-        roughness={0.1}
         metalness={0.8}
+        roughness={0.1}
+        transparent
+        opacity={0.8}
       />
-    </Sphere>
+    </mesh>
   );
 }
 
@@ -75,6 +75,10 @@ const ThreeBackground: React.FC<ThreeBackgroundProps> = ({ className = "" }) => 
       <Canvas
         camera={{ position: [0, 0, 8], fov: 60 }}
         style={{ background: 'transparent' }}
+        gl={{ antialias: true, alpha: true }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+        }}
       >
         <ambientLight intensity={0.4} />
         <pointLight position={[10, 10, 10]} intensity={1} color="#00BFFF" />
