@@ -4,10 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Menu, X, User, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/contexts/CartContext';
+import SearchComponent from '@/components/ui/search';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { state } = useCart();
   const location = useLocation();
   const navigate = useNavigate();
@@ -87,7 +89,12 @@ const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="relative">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="relative"
+              onClick={() => setIsSearchOpen(true)}
+            >
               <Search className="h-5 w-5" />
             </Button>
             
@@ -192,6 +199,12 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Search Component */}
+      <SearchComponent 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)} 
+      />
     </motion.nav>
   );
 };

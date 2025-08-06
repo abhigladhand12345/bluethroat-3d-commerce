@@ -25,10 +25,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            The Future of
+            Discover Your
             <br />
             <span className="block mt-2">
-              Modern Commerce
+              Perfect Style
             </span>
           </motion.h1>
 
@@ -38,8 +38,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover cutting-edge technology and innovative products that redefine 
-            your digital lifestyle. Premium quality, exceptional design.
+            Explore the latest fashion trends from multiple brands in one convenient online store. 
+            Premium quality clothing that defines your unique style.
           </motion.p>
 
           <motion.div
@@ -76,16 +76,16 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">50K+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">10K+</div>
               <div className="text-white/70 text-sm md:text-base">Happy Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">200+</div>
-              <div className="text-white/70 text-sm md:text-base">Premium Products</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+              <div className="text-white/70 text-sm md:text-base">Fashion Items</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
-              <div className="text-white/70 text-sm md:text-base">Customer Support</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+              <div className="text-white/70 text-sm md:text-base">Top Brands</div>
             </div>
           </motion.div>
         </motion.div>
